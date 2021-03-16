@@ -1,4 +1,4 @@
-
+import time
 
 class Comment :
 
@@ -7,9 +7,10 @@ class Comment :
         posts = bot.get_total_user_medias(target)
         
         for post in posts:
-
+            
+            time.sleep(2)
             msg = bot.comment(post, message)
-
+            
             if msg is True :
                 print('POST: ' + post + ' Comentado')
             else : 
