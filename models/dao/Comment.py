@@ -8,11 +8,12 @@ class Comment :
         
         for post in posts:
             
-            time.sleep(2)
+           
             msg = bot.comment(post, message)
             
             if msg is True :
                 print('POST: ' + post + ' Comentado')
+                time.sleep(2)
             else : 
                 print('No se pudo comentar el POST: '+ post)
         return print('Operacion realizada, comentarios hechos')
