@@ -1,5 +1,5 @@
 
 class appProperties :
-    USER_EMAIL = "kevinperez1274"
-    USER_PASSWORD = "06052000"
-    TARGET = "moneyshopve"
+    USER_EMAIL = "<username>"
+    USER_PASSWORD = "<password>"
+    TARGET = "<target>"
