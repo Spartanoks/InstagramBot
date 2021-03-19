@@ -1,4 +1,4 @@
-from models.dao.Comment import Comment
+from app.models.dao.Comment import Comment
 
 class CommentImpl :
     

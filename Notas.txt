@@ -1,0 +1,3 @@
+Cosas que se cambiaron de instabot
+
+La funcion para subir las hitorias

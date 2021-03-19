@@ -1,5 +1,5 @@
-from models.service.implements.CommentImpl import CommentImpl
-from models.service.ITargetService import ITargetService
+from app.models.service.implements.CommentImpl import CommentImpl
+from app.models.service.ITargetService import ITargetService
 
 class ICommentService :
     def hateComment(bot, username, message) :

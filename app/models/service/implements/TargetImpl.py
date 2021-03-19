@@ -1,4 +1,4 @@
-from models.dao.Target import Target
+from app.models.dao.Target import Target
 
 class TargetImpl :
     

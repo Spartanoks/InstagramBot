@@ -1,4 +1,4 @@
-from models.service.implements.TargetImpl import TargetImpl
+from app.models.service.implements.TargetImpl import TargetImpl
 
 class ITargetService :
 
