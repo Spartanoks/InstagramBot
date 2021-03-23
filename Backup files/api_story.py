@@ -113,8 +113,8 @@ def resize_image(fname):
         )
         return False
     print("Analizing `{fname}`".format(fname=fname))
-    h_lim = {"w": 100.0, "h": 100.0}
-    v_lim = {"w": 100.0, "h": 100.0}
+    h_lim = {"w": 90.0, "h": 47.0}
+    v_lim = {"w": 4.0, "h": 5.0}
     img = Image.open(fname)
     (w, h) = img.size
     deg = 0
@@ -138,7 +138,7 @@ def resize_image(fname):
         print("No exif info found (ERR: {err})".format(err=e))
         pass
     img = img.convert("RGBA")
-    ratio = w * 4.0 / h * 1.0
+    ratio = w * 1.0 / h * 1.0
     print("FOUND w:{w}, h:{h}, ratio={r}".format(w=w, h=h, r=ratio))
     if w > h:
         print("Horizontal image")
@@ -154,7 +154,7 @@ def resize_image(fname):
         if w > 1080:
             print("Resizing image")
             nw = 1080
-            nh = 1920
+            nh = 1334
             img = img.resize((nw, nh), Image.ANTIALIAS)
     elif w < h:
         print("Vertical image")
@@ -170,7 +170,7 @@ def resize_image(fname):
         if h > 1080:
             print("Resizing image")
             nw = 1080
-            nh = 1920
+            nh = 1334
             img = img.resize((nw, nh), Image.ANTIALIAS)
     else:
         print("Square image")
@@ -188,7 +188,7 @@ def resize_image(fname):
 def compatible_aspect_ratio(size):
     min_ratio, max_ratio = 4.0 / 5.0, 90.0 / 47.0
     width, height = size
-    ratio = width * 4.0 / height * 1.0
+    ratio = width * 1.0 / height * 1.0
     print("FOUND: w:{w} h:{h} r:{r}".format(w=width, h=height, r=ratio))
     return min_ratio <= ratio <= max_ratio
 

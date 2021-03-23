@@ -22,6 +22,9 @@ class Main :
         photo = 'app/resources/img/lego.jpg'
         return IPostService.uploadStoryPhoto(bot, photo)
 
+    def autoReply() :
+        return ICommentService.autoReply(bot, Message.replyMessage())
+
 
     
     

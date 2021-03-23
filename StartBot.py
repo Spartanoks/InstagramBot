@@ -2,5 +2,6 @@ from app.applicationTasks import *
 import time
 
 while True :
-    Main.uploadStory()
+    Main.autoReply()
+    time.sleep(10)
     
