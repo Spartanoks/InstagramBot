@@ -43,10 +43,12 @@ class Message :
         for message in messages :
             if message["text"] in Dictionary.frequentQuestions() :
                 Message.sendMessage(bot, text, message["user_id"])
-            elif message["text"] == "Hola" :
-                Message.sendMessage(bot, Message.defaultMessage, message["user_id"])
+
+            elif message["text"] in Dictionary.greetings() :
+                Message.sendMessage(bot, Message.defaultMessage(), message["user_id"])
+                
             else :
-                Message.sendMessage(bot, Message.errorReplyMessage, message["user_id"])
+                Message.sendMessage(bot, Message.errorReplyMessage(), message["user_id"])
 
        
             

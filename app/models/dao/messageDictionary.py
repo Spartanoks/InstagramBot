@@ -6,3 +6,9 @@ class Dictionary :
                     "precio"
                 ]
         return questions
+    
+    def greetings() :
+        questions = ["Hola",
+                    "hola"
+                ]
+        return questions
