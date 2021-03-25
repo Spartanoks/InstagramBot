@@ -1,3 +1,4 @@
+from app.models.dao.messageDictionary import Dictionary
 
 class Message :
 
@@ -12,6 +13,9 @@ class Message :
 
     def textMessage() :
         return "Hi"
+
+    def errorReplyMessage() :
+        return "No conozco esa opcion, por favor indique algunas de las opciones dictadas con anterioridad"
 
     def sendMessage(bot, message, target):
         return bot.send_message(message, target)
@@ -32,4 +36,17 @@ class Message :
             inbox.append(chat)
           
         return inbox
+    
+
+    def replyMessage(bot, text) :
+        messages = Message.getInbox(bot)
+        for message in messages :
+            if message["text"] in Dictionary.frequentQuestions() :
+                Message.sendMessage(bot, text, message["user_id"])
+            elif message["text"] == "Hola" :
+                Message.sendMessage(bot, Message.defaultMessage, message["user_id"])
+            else :
+                Message.sendMessage(bot, Message.errorReplyMessage, message["user_id"])
+
+       
             
