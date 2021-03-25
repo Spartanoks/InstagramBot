@@ -5,11 +5,11 @@ from app.models.service.ITargetService import ITargetService
 from app.applicationProperties import appProperties
 from app.models.dao.Messages import Message
 from app.models.service.IPostService import IPostService
-import os
 from PIL import Image
 
 bot = Auth.bot
 class Main :
+    
     def getUserId():
         user_id = ITargetService.getUserIdFromUsername(bot, appProperties.TARGET)
         return print(user_id)
@@ -24,6 +24,9 @@ class Main :
 
     def autoReply() :
         return ICommentService.autoReply(bot, Message.replyMessage())
+
+    def getInbox():
+        return Message.getInbox(bot)
 
 
     
